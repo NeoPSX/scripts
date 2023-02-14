@@ -1,0 +1,81 @@
+      --Library
+      local Rayfield = loadstring(game:HttpGet('https://raw.githubusercontent.com/shlexware/Rayfield/main/source'))()
+      
+      --Up window
+      local Window = Rayfield:CreateWindow({
+         Name = "Vaazy Hub | 💖 Pet Simulator X! 🐾",
+         LoadingTitle = "Loading Vaazy Hub",
+         LoadingSubtitle = "by Pioter",
+         ConfigurationSaving = {
+            Enabled = true,
+            FolderName = nil, -- Create a custom folder for your hub/game
+            FileName = "Big Hub"
+         },
+      
+         --Join discord at  inject script
+         Discord = {
+            Enabled = false,
+            Invite = "vazzyhub", -- The Discord invite code, do not include discord.gg/. E.g. discord.gg/ABCD would be ABCD.
+            RememberJoins = true -- Set this to false to make them join the discord every time they load it up
+         },
+      
+         --Key System
+         KeySystem = true, -- Set this to true to use our key system
+         KeySettings = {
+            Title = "Sirius Hub",
+            Subtitle = "Key System",
+            Note = "Join the discord (discord.gg/vazzyhub)",
+            FileName = "SiriusKey",
+            SaveKey = true,
+            GrabKeyFromSite = false, -- If this is true, set Key below to the RAW site you would like Rayfield to get the key from
+            Key = "8J92E-YSLDR-IUGVX"
+         }
+      })
+      
+      --Notify at start script
+      Rayfield:Notify({
+         Title = "Found game!",
+         Content = "Welcome to Vazzy Hub ( 💖 Pet Simulator X! 🐾 )! ",
+         Duration = 10,
+         Image = 12485257913,
+         Actions = { -- Notification Buttons
+            Ignore = {
+               Name = "Okay!",
+               Callback = function()
+               print("The user tapped Okay!")
+            end
+         },
+      },
+      })  
+      
+      --Tabs
+      local Main = Window:CreateTab("Trade Scam", 12485283184) --Title, Image
+      local Tab1 = Window:CreateTab("Dupe (SOON!)", 12485289780) --Title, Image
+      local Tab2 = Window:CreateTab("Player", 2795572800) --Title, Image
+      local Tab3 = Window:CreateTab("GUI Settings", 12485299328) --Title, Image
+      
+      
+      --Fake Trade
+      local Main = Main:CreateButton({
+         Name = "Enable/Disable Fake Trade",
+         Callback = function()
+         -- The function that takes place when the button is pressed
+         end,
+      })
+  
+       local Main = Main:CreateSlider({
+         Name = "Slider Example",
+         Range = {0, 20},
+         Increment = 10,
+         Suffix = "Bananas",
+         CurrentValue = 10,
+         Flag = "Main", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+         Callback = function(Value)
+         -- The function that takes place when the slider changes
+         -- The variable (Value) is a number which correlates to the value the slider is currently at
+         end,
+      })
+
+      
+      
+      
